@@ -13,6 +13,10 @@ wallpaper=(
 #Random number generator
 VAR=$(shuf -i 0-354 -n 1)
 
+#changes terminal colours
+wal -q -i "${wallpaper[$VAR]}"
+
+
 #assigns a template file to wal_tpl
 wal_tpl=$(cat /home/tiger/.config/hypr/hyprpaper/hyprpaper.tpl)
 
@@ -23,9 +27,8 @@ output=${wal_tpl//WALLPAPER/${wallpaper[$VAR]}}
 echo "$output" > $HOME/.config/hypr/hyprpaper.conf
 hyprpaper
 
-#changes terminal colours
-wal -q -i "${wallpaper[$VAR]}"
 
+#restart waybar
 killall waybar
 waybar
 
