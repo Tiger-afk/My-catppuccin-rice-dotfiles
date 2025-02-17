@@ -26,4 +26,7 @@ hyprpaper
 #changes terminal colours
 wal -q -i "${wallpaper[$VAR]}"
 
+killall waybar
+waybar
+
 
